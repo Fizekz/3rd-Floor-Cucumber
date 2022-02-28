@@ -8,6 +8,9 @@ const RANDOM_ROLE_COMMAND = "random-role"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
+    client.user.setActivity("c!test", {
+        type: "LISTENING",
+      });
 })
 
 client.on('messageCreate', msg =>{
