@@ -7,6 +7,7 @@ const BOT_PREFIX = "c!"
 const RANDOM_ROLE_COMMAND = "random-role"
 const TEST_COMMAND = "test"
 const ABOUT_COMMAND = "about"
+const UA = "ukraine"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
@@ -18,6 +19,10 @@ client.on('ready', () => {
 client.on('messageCreate', msg =>{
     if (msg.content == 'Checkmark my message') {
         msg.react('✅')
+    }
+
+    if (msg.content == `${BOT_PREFIX}${UA}`) {
+        msg.channel.send('🇺🇦 :flag_ua: ')
     }
 
     if (msg.content == `${BOT_PREFIX}${TEST_COMMAND}`) {
