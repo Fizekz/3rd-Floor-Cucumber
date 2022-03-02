@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { Client, Intents } = require('discord.js');
+const { Client, Intents, MessageEmbed } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const BOT_PREFIX = "c!"
 const RANDOM_ROLE_COMMAND = "random-role"
@@ -51,6 +51,28 @@ client.on('messageCreate', msg =>{
         msg.channel.send("http://www.5z8.info/inject_now_yauf")
     }
 
+    if (msg.content == "c!embedtest") {
+        const exampleEmbed = new MessageEmbed()
+	    .setColor('#0099ff')
+	    .setTitle('Some title')
+	    .setURL('https://discord.js.org/')
+	    .setAuthor({ name: 'Some name', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
+	    .setDescription('Some description here')
+	    .setThumbnail('https://i.imgur.com/AfFp7pu.png')
+	    .addFields(
+		    { name: 'Regular field title', value: 'Some value here' },
+		    { name: '\u200B', value: '\u200B' },
+		    { name: 'Inline field title', value: 'Some value here', inline: true },
+		    { name: 'Inline field title', value: 'Some value here', inline: true },
+	)
+	    .addField('Inline field title', 'Some value here', true)
+	    .setImage('https://i.imgur.com/AfFp7pu.png')
+	    .setTimestamp()
+	    .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
+
+    channel.send({ embeds: [exampleEmbed] });
+    }
+    
 })
 
 function randomroleUser(member) {
