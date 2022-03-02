@@ -43,12 +43,6 @@ client.on('messageCreate', msg =>{
         msg.channel.send("cares")
     }
     
-    if (msg.content == `${BOT_PREFIX}${EMBED_TEST_COMMAND}`) {
-        const testEmbed = new MessageEmbed()
-            .setTitle('Test Embed')
-            .setDescription('if this works im not an idiot')
-        channel.send({ embeds: [testEmbed] });
-    }
 })
 
 function randomroleUser(member) {
