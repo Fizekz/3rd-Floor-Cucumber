@@ -2,12 +2,14 @@ require('dotenv').config();
 
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
-
+const { MessageEmbed } = require('discord.js');
 const BOT_PREFIX = "c!"
 const RANDOM_ROLE_COMMAND = "random-role"
 const TEST_COMMAND = "test"
 const ABOUT_COMMAND = "about"
 const UA = "ukraine"
+const WHO = "who?"
+const EMBED_TEST_COMMAND = "embedtest"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
@@ -33,8 +35,19 @@ client.on('messageCreate', msg =>{
         msg.channel.send("3rd Floor Cucumber is a bot created by Fizekz#7407. DM for questions. Donations highly appreciated.")
     }
 
-    if (msg.content === `${BOT_PREFIX}${RANDOM_ROLE_COMMAND}`) {
+    if (msg.content == `${BOT_PREFIX}${RANDOM_ROLE_COMMAND}`) {
       randomroleUser(msg.member)
+    }
+
+    if (msg.content == `${BOT_PREFIX}${WHO}`) {
+        msg.channel.send("cares")
+    }
+    
+    if (msg.content == `${BOT_PREFIX}${EMBED_TEST_COMMAND}`) {
+        const testEmbed = new MessageEmbed()
+            .setTitle('Test Embed')
+            .setDescription('if this works im not an idiot')
+        channel.send({ embeds: [testEmbed] });
     }
 })
 
