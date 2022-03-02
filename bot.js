@@ -3,13 +3,13 @@ require('dotenv').config();
 const { Client, Intents, MessageEmbed } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const BOT_PREFIX = "c!"
-const RANDOM_ROLE_COMMAND = "random-role"
 const TEST_COMMAND = "test"
 const ABOUT_COMMAND = "about"
 const UA = "ukraine"
 const WHO = "who?"
 const RICKROLL = "rick"
 const ITALIANRICK = "italyrick"
+const EMBED_TEST_COMMAND = "embedtest"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
@@ -32,11 +32,14 @@ client.on('messageCreate', msg =>{
     }
 
     if (msg.content == `${BOT_PREFIX}${ABOUT_COMMAND}`) {
-        msg.channel.send("3rd Floor Cucumber is a bot created by Fizekz#7407. DM for questions. Donations highly appreciated.")
-    }
+        const aboutEmbed = new MessageEmbed()
+	        .setColor('#27f549')
+	        .setTitle('About')
+	        .setAuthor({ name: 'Fizekz', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' })
+	        .setThumbnail('https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80')
+	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release/development. \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
 
-    if (msg.content == `${BOT_PREFIX}${RANDOM_ROLE_COMMAND}`) {
-      randomroleUser(msg.member)
+        msg.channel.send({ embeds: [aboutEmbed] });
     }
 
     if (msg.content == `${BOT_PREFIX}${WHO}`) {
@@ -51,9 +54,9 @@ client.on('messageCreate', msg =>{
         msg.channel.send("http://www.5z8.info/inject_now_yauf")
     }
 
-    if (msg.content == "c!embedtest") {
+    if (msg.content == `${BOT_PREFIX}${EMBED_TEST_COMMAND}`) {
         const exampleEmbed = new MessageEmbed()
-	        .setColor('#0099ff')
+	        .setColor('#27f549')
 	        .setTitle('Some title')
 	        .setURL('https://discord.js.org/')
 	        .setAuthor({ name: 'Some name', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
@@ -61,7 +64,7 @@ client.on('messageCreate', msg =>{
 	        .setThumbnail('https://i.imgur.com/AfFp7pu.png')
 	        .addFields(
 		        { name: 'Regular field title', value: 'Some value here' },
-			{ name: '\u200B', value: '\u200B' },
+		        { name: '\u200B', value: '\u200B' },
 		        { name: 'Inline field title', value: 'Some value here', inline: true },
 		        { name: 'Inline field title', value: 'Some value here', inline: true },
 	)
@@ -72,7 +75,7 @@ client.on('messageCreate', msg =>{
 
         msg.channel.send({ embeds: [exampleEmbed] });
     }
-    
+
 })
 
 function randomroleUser(member) {
