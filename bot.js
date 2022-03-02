@@ -1,7 +1,6 @@
 require('dotenv').config();
 
-const { MessageEmbed } = require('discord.js');
-const { Client, Intents, MessageEmbed } = require('discord.js');
+const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const BOT_PREFIX = "c!"
 const RANDOM_ROLE_COMMAND = "random-role"
