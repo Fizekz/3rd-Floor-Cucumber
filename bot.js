@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const { Client, Intents, MessageEmbed } = require('discord.js');
-const { MessageButtonStyles } = require('discord.js/typings/enums');
+const { MessageButtonStyles } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const BOT_PREFIX = "c!"
 const TEST_COMMAND = "test"
