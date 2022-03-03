@@ -79,7 +79,7 @@ client.on('messageCreate', msg =>{
     }
 
     if (msg.content == `${BOT_PREFIX}${HELP_COMMAND}`) {
-        const helpEmbed = new MessageEmbed ()
+        const helpEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setTitle('Help')
             .setDescription('An expansive list of commands, with more being added every day! \nAll commands start with the prefix c!')
@@ -94,7 +94,7 @@ client.on('messageCreate', msg =>{
                 { name: '(c!)italyrick', value: 'Our very special friend has gone abroad' },
     )
             .setFooter({ text: 'pls donate', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
-            
+
         msg.channel.send({embeds: [helpEmbed] });
     }
 
