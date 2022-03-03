@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const { Client, Intents, MessageEmbed } = require('discord.js');
+const { MessageButtonStyles } = require('discord.js/typings/enums');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const BOT_PREFIX = "c!"
 const TEST_COMMAND = "test"
@@ -10,10 +11,11 @@ const WHO = "who?"
 const RICKROLL = "rick"
 const ITALIANRICK = "italyrick"
 const EMBED_TEST_COMMAND = "embedtest"
+const HELP_COMMAND = "help"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
-    client.user.setActivity("c!test", {
+    client.user.setActivity("c!help", {
         type: "LISTENING",
       });
 })
@@ -73,7 +75,27 @@ client.on('messageCreate', msg =>{
 	        .setTimestamp()
 	        .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
-        msg.channel.send({ embeds: [exampleEmbed] });
+        msg.channel.send({ embeds: [exampleEmbed] });    
+    }
+
+    if (msg.content == `${BOT_PREFIX}${HELP_COMMAND}`) {
+        const helpEmbed = new MessageEmbed ()
+            .setColor('#27f549')
+            .setTitle('Help')
+            .setDescription('An expansive list of commands, with more being added every day! \nAll commands start with the prefix c!')
+            .addFields(
+                { name: '(c!)test', value: 'Check to see if the bot is running' },
+                { name: '(c!)about', value: 'Displays some info about the bot' },
+                { name: '(c!)ukraine', value: 'Stand strong with Ukraine' },
+                { name: '(c!)embedtest', value: 'Displays a reference embed for code purposes' },
+                { name: '(c!)help', value: 'If you don\'t know what this command does, you  need help' },
+                { name: '(c!)who?', value: 'Try this command to see what it does' },
+                { name: '(c!)rick', value: 'Invites a very special friend to the channel' },
+                { name: '(c!)italyrick', value: 'Our very special friend has gone abroad' },
+    )
+            .setFooter({ text: 'pls donate', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
+            
+        msg.channel.send({embeds: [helpEmbed] });
     }
 
 })
