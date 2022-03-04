@@ -13,6 +13,7 @@ const ITALIANRICK = "italyrick"
 const EMBED_TEST_COMMAND = "embedtest"
 const HELP_COMMAND = "help"
 const DONATE_COMMAND = "donate"
+const RELEASENOTES_COMMAND = "releasenotes"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
@@ -40,7 +41,7 @@ client.on('messageCreate', msg =>{
 	        .setTitle('About')
 	        .setAuthor({ name: 'Fizekz', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' })
 	        .setThumbnail('https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80')
-	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release/development. \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
+	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.27 . \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
 
         msg.channel.send({ embeds: [aboutEmbed] });
     }
@@ -93,8 +94,10 @@ client.on('messageCreate', msg =>{
                 { name: '(c!)who?', value: 'Try this command to see what it does' },
                 { name: '(c!)rick', value: 'Invites a very special friend to the channel' },
                 { name: '(c!)italyrick', value: 'Invita un amico molto speciale sul canale' },
+                { name: '(c!)donate', value: 'PAY US IN CRYPTO!'},
+                { name: '(c!)releasenotes', value: 'Check out what\'s new!'},
     )
-            .setFooter({ text: 'pls donate', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
+            .setFooter({ text: '"pls donate"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
 
         msg.channel.send({embeds: [helpEmbed] });
     }
@@ -108,11 +111,20 @@ client.on('messageCreate', msg =>{
                 { name: 'Bitcoin Wallet', value: 'Send Bitcoin to \n-> 3PmRZapVxkyGZUmzwLs27MmLN9XSFUWG5w' },
                 { name: 'Ethereum Wallet', value: 'Send Ethereum to \n-> 0x52053af1205dbfaf492c469cdb70247a14da7d10' },
     )
-            .setFooter({ text: 'if you donate, you get a cookie', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
+            .setFooter({ text: '"if you donate, you get a cookie"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
         
         msg.channel.send({embeds: [donateEmbed] });
     }
 
+    if (msg.content == `${BOT_PREFIX}${RELEASENOTES_COMMAND}`) {
+        const releasenotesEmbed = new MessageEmbed()
+            .setColor('#27f549')
+            .setTitle('Release Notes')
+            .addField('v0.27', 'Added Release Notes Command! \nAdded donate command & release notes command to the help command. \n Added release information to the help command. \nAdded quotation marks to the donate command and help command.')
+            .setfooter({ text: '"everything\'s better with release notes"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80'})
+        
+        msg.channel.send({embeds: [releasenotesEmbed] });
+    }
 })
 
 function randomroleUser(member) {
