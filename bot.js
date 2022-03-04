@@ -12,6 +12,7 @@ const RICKROLL = "rick"
 const ITALIANRICK = "italyrick"
 const EMBED_TEST_COMMAND = "embedtest"
 const HELP_COMMAND = "help"
+const DONATE_COMMAND = "donate"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
@@ -91,11 +92,25 @@ client.on('messageCreate', msg =>{
                 { name: '(c!)help', value: 'If you don\'t know what this command does, you  need help' },
                 { name: '(c!)who?', value: 'Try this command to see what it does' },
                 { name: '(c!)rick', value: 'Invites a very special friend to the channel' },
-                { name: '(c!)italyrick', value: 'Our very special friend has gone abroad' },
+                { name: '(c!)italyrick', value: 'Invita un amico molto speciale sul canale' },
     )
             .setFooter({ text: 'pls donate', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
 
         msg.channel.send({embeds: [helpEmbed] });
+    }
+
+    if (msg.content == `${BOT_PREFIX}${DONATE_COMMAND}`) {
+        const donateEmbed = new MessageEmbed()
+            .setColor('#27f549')
+            .setTitle('DONATE')
+            .setDescription('Pay us in crypto!')
+            .addFields(
+                { name: 'Bitcoin Wallet', value: 'Send Bitcoin to \n-> 3PmRZapVxkyGZUmzwLs27MmLN9XSFUWG5w' },
+                { name: 'Ethereum Wallet', value: 'Send Ethereum to \n-> 0x52053af1205dbfaf492c469cdb70247a14da7d10' },
+    )
+            .setFooter({ text: 'if you donate, you get a cookie', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
+        
+        msg.channel.send({embeds: [donateEmbed] });
     }
 
 })
