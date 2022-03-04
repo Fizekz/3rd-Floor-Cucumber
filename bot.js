@@ -121,7 +121,7 @@ client.on('messageCreate', msg =>{
             .setColor('#27f549')
             .setTitle('Release Notes')
             .addField('v0.27', 'Added Release Notes Command! \nAdded donate command & release notes command to the help command. \n Added release information to the help command. \nAdded quotation marks to the donate command and help command.')
-            .setfooter({ text: '"everything\'s better with release notes"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80'})
+            .setFooter({ text: '"everything\'s better with release notes"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80'})
         
         msg.channel.send({embeds: [releasenotesEmbed] });
     }
