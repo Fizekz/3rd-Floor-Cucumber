@@ -129,7 +129,11 @@ client.on('messageCreate', msg =>{
     }
 
     if (msg.content == `${BOT_PREFIX}${JASON_COMMAND}`) {
-        msg.channel.send(" :0jason: ")
+        const jasonEmbed = new MessageEmbed()
+            .setColor('#27f549')
+            .setImage('https://cdn.discordapp.com/emojis/934460690511564891.webp?size=96&quality=lossless')
+
+        msg.channel.send({embeds: [jasonEmbed]})
     }
 
 
