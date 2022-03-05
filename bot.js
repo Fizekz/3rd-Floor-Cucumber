@@ -14,6 +14,7 @@ const EMBED_TEST_COMMAND = "embedtest"
 const HELP_COMMAND = "help"
 const DONATE_COMMAND = "donate"
 const RELEASENOTES_COMMAND = "releasenotes"
+const JASON_COMMAND = "jason"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
@@ -41,7 +42,7 @@ client.on('messageCreate', msg =>{
 	        .setTitle('About')
 	        .setAuthor({ name: 'Fizekz', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' })
 	        .setThumbnail('https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80')
-	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.27 . \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
+	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.29 . \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
 
         msg.channel.send({ embeds: [aboutEmbed] });
     }
@@ -96,6 +97,7 @@ client.on('messageCreate', msg =>{
                 { name: '(c!)italyrick', value: 'Invita un amico molto speciale sul canale' },
                 { name: '(c!)donate', value: 'PAY US IN CRYPTO!'},
                 { name: '(c!)releasenotes', value: 'Check out what\'s new!'},
+                { name: '(c!)jason', value: "This will only work if you have the emoji in your server"},
     )
             .setFooter({ text: '"pls donate"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
 
@@ -120,15 +122,18 @@ client.on('messageCreate', msg =>{
         const releasenotesEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setTitle('Release Notes')
-            .addField('v0.27', 'Added Release Notes Command! \nAdded donate command & release notes command to the help command. \n Added release information to the help command. \nAdded quotation marks to the donate command and help command.')
+            .addField('v0.29', 'Testing the (c!)jason command')
             .setFooter({ text: '"everything\'s better with release notes"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80'})
         
         msg.channel.send({embeds: [releasenotesEmbed] });
     }
+
+    if (msg.content == `${BOT_PREFIX}${JASON_COMMAND}`) {
+        msg.channel.send(" :0jason: ")
+    }
+
+
 })
 
-function randomroleUser(member) {
-    member.roles.add('947549506168311850')
-}
 
 client.login(process.env.BOT_TOKEN);
