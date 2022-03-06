@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const { Client, Intents, MessageEmbed } = require('discord.js');
 const { MessageButtonStyles } = require('discord.js');
+const { maxHeaderSize } = require('http');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const BOT_PREFIX = "c!"
 const TEST_COMMAND = "test"
@@ -15,6 +16,7 @@ const HELP_COMMAND = "help"
 const DONATE_COMMAND = "donate"
 const RELEASENOTES_COMMAND = "releasenotes"
 const JASON_COMMAND = "jason"
+const RICO_COMMAND = "roastrico"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
@@ -42,7 +44,7 @@ client.on('messageCreate', msg =>{
 	        .setTitle('About')
 	        .setAuthor({ name: 'Fizekz', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' })
 	        .setThumbnail('https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80')
-	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.31 . \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
+	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.32 . \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
 
         msg.channel.send({ embeds: [aboutEmbed] });
     }
@@ -98,6 +100,7 @@ client.on('messageCreate', msg =>{
                 { name: '(c!)donate', value: 'PAY US IN CRYPTO!'},
                 { name: '(c!)releasenotes', value: 'Check out what\'s new!'},
                 { name: '(c!)jason', value: "Yes"},
+                { name: '(c!)roastrico', value: "i DoNt bOtHeR bEiNg nIcE"},
     )
             .setFooter({ text: '"pls donate"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
 
@@ -122,7 +125,7 @@ client.on('messageCreate', msg =>{
         const releasenotesEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setTitle('Release Notes')
-            .addField('v0.31', 'Added the (c!)jason command as an embed and updated the status on the help command.')
+            .addField('v0.32', 'Added the (c!)roastrico command. (w/ help from Diza)')
             .setFooter({ text: '"everything\'s better with release notes"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80'})
         
         msg.channel.send({embeds: [releasenotesEmbed] });
@@ -135,6 +138,15 @@ client.on('messageCreate', msg =>{
 
         msg.channel.send({embeds: [jasonEmbed]})
     }
+
+    if (msg.content == `${BOT_PREFIX}${RICO_COMMAND}`) {
+        const ricoEmbed = new MessageEmbed()
+            .setColor('#27f549')
+            .setDescription('"i DoNt bOtHeR bEiNg NiCe"')
+            .setImage('https://cdn.discordapp.com/attachments/928377202251280395/949792328204296222/EF4D699D-5A4F-4519-BAAA-78D5BE70B834.jpg')
+        msg.channel.send({embeds: [ricoEmbed]})
+    }
+
 
 
 })
