@@ -163,7 +163,7 @@ client.on('messageCreate', msg =>{
     if (msg.content == `${BOT_PREFIX}${SRI_COMMAND}`) {
         const sriEmbed = new MessageEmbed()
             .setColor('#27f459')
-            .setDescription('sous')
+            .setDescription('sus')
             .setImage('https://cdn.discordapp.com/attachments/928377202251280395/950423605454463026/EkkfyuwvP2QnOHnwmSaVkAuFPhYqDgYIgCQRI7svZoiIgERvboRAhECEwLsTgYiARAQkIiDvzr4dPVWEwGwIvN0JyP8AMRZdLTS6jC0AAAAASUVORK5CYII.png')
         msg.channel.send({embeds: [sriEmbed]})
     }
