@@ -17,11 +17,13 @@ const DONATE_COMMAND = "donate"
 const RELEASENOTES_COMMAND = "releasenotes"
 const JASON_COMMAND = "jason"
 const RICO_COMMAND = "rico"
+const SAHNAN_COMMAND = "sahnan"
+const SRI_COMMAND = "sri"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
     client.user.setActivity("c!help", {
-        type: "LISTENING",
+        type: "WATCHING",
       });
 })
 
@@ -44,7 +46,7 @@ client.on('messageCreate', msg =>{
 	        .setTitle('About')
 	        .setAuthor({ name: 'Fizekz', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' })
 	        .setThumbnail('https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80')
-	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.33 . \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
+	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.34 . \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
 
         msg.channel.send({ embeds: [aboutEmbed] });
     }
@@ -99,8 +101,10 @@ client.on('messageCreate', msg =>{
                 { name: '(c!)italyrick', value: 'Invita un amico molto speciale sul canale' },
                 { name: '(c!)donate', value: 'PAY US IN CRYPTO!'},
                 { name: '(c!)releasenotes', value: 'Check out what\'s new!'},
-                { name: '(c!)jason', value: "Yes"},
+                { name: '(c!)jason', value: "sussin"},
                 { name: '(c!)roastrico', value: "amogus"},
+                { name: '(c!)sahnan', value: 'sussy'},
+                { name: '(c!)sri', value: "bussin" },
     )
             .setFooter({ text: '"pls donate"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
 
@@ -125,7 +129,7 @@ client.on('messageCreate', msg =>{
         const releasenotesEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setTitle('Release Notes')
-            .addField('v0.33', 'Updated the (c!)rico command.')
+            .addField('v0.34', 'Added sussy commands')
             .setFooter({ text: '"everything\'s better with release notes"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80'})
         
         msg.channel.send({embeds: [releasenotesEmbed] });
@@ -134,7 +138,8 @@ client.on('messageCreate', msg =>{
     if (msg.content == `${BOT_PREFIX}${JASON_COMMAND}`) {
         const jasonEmbed = new MessageEmbed()
             .setColor('#27f549')
-            .setImage('https://cdn.discordapp.com/emojis/934460690511564891.webp?size=96&quality=lossless')
+            .setDescription('sussin')
+            .setImage('https://cdn.discordapp.com/attachments/928377202251280395/950419906795552828/deepfried_1646668140550.jpg')
 
         msg.channel.send({embeds: [jasonEmbed]})
     }
@@ -142,12 +147,26 @@ client.on('messageCreate', msg =>{
     if (msg.content == `${BOT_PREFIX}${RICO_COMMAND}`) {
         const ricoEmbed = new MessageEmbed()
             .setColor('#27f549')
-            .setDescription('"sussin"')
+            .setDescription('bussin')
             .setImage('https://cdn.discordapp.com/attachments/947153541716389929/950233838347518002/wfY63I98R8TAAAAABJRU5ErkJggg.png')
         msg.channel.send({embeds: [ricoEmbed]})
     }
 
+    if (msg.content == `${BOT_PREFIX}${SAHNAN_COMMAND}`) {
+        const sahnanEmbed = new MessageEmbed()
+            .setcolor('#27f549')
+            .setDescription('sussy')
+            .setImage('https://cdn.discordapp.com/attachments/928377202251280395/950421238201843734/deepfried_1646668469268.jpg')
+        msg.channel.send({embeds: [sahnanEmbed]})
+    }
 
+    if (msg.content == `${BOT_PREFIX}${SRI_COMMAND}`) {
+        const sriEmbed = new MessageEmbed()
+            .setColor('#27f459')
+            .setDescription('sous')
+            .setImage('https://cdn.discordapp.com/attachments/928377202251280395/950423605454463026/EkkfyuwvP2QnOHnwmSaVkAuFPhYqDgYIgCQRI7svZoiIgERvboRAhECEwLsTgYiARAQkIiDvzr4dPVWEwGwIvN0JyP8AMRZdLTS6jC0AAAAASUVORK5CYII.png')
+        msg.channel.send({embeds: [sriEmbed]})
+    }
 
 })
 
