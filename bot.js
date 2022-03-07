@@ -154,7 +154,7 @@ client.on('messageCreate', msg =>{
 
     if (msg.content == `${BOT_PREFIX}${SAHNAN_COMMAND}`) {
         const sahnanEmbed = new MessageEmbed()
-            .setcolor('#27f549')
+            .setColor('#27f549')
             .setDescription('sussy')
             .setImage('https://cdn.discordapp.com/attachments/928377202251280395/950421238201843734/deepfried_1646668469268.jpg')
         msg.channel.send({embeds: [sahnanEmbed]})
