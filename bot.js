@@ -105,7 +105,7 @@ client.on('messageCreate', msg =>{
                 { name: '(c!)donate', value: 'PAY US IN CRYPTO!'},
                 { name: '(c!)releasenotes', value: 'Check out what\'s new!'},
                 { name: '(c!)pickup', value: "😏"},
-                { name: 'PEOPLE COMMANDS'},
+                { name: 'PEOPLE COMMANDS', value: ''},
                 { name: '(c!)jason', value: "sussin"},
                 { name: '(c!)roastrico', value: "amogus"},
                 { name: '(c!)sahnan', value: 'sussy'},
