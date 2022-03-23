@@ -1,10 +1,11 @@
 require('dotenv').config();
 
-const pickups = ['You\'re so hot, even my zipper is falling for you', 'Are you a bullet? Because I can\'t seem to get you out of my head', 'Are you a roller coaster? Because the faster you go, the louder I scream', 'Are you a task? Because I have no problem doing you', 'I hope you know CPR, because you just took my breath away']
 const { Client, Intents, MessageEmbed } = require('discord.js');
 const { MessageButtonStyles } = require('discord.js');
 const { maxHeaderSize } = require('http');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+
+const pickups = ['You\'re so hot, even my zipper is falling for you', 'Are you a bullet? Because I can\'t seem to get you out of my head', 'Are you a roller coaster? Because the faster you go, the louder I scream', 'Are you a task? Because I have no problem doing you', 'I hope you know CPR, because you just took my breath away', 'Are you a parking ticket? Because you\'ve got fine written all over you', 'Your outfit would look great on my bedroom floor', 'Are you a loan? Because you are gaining my interest', 'Is that a candy cane in your pocket? Or are you just happy to see me?', 'You look great right now. You know what else would look good on you? Me', 'You dropped something...My jaw', 'Do you have a name? Or should I call you mine?']
 const BOT_PREFIX = "c!"
 const TEST_COMMAND = "test"
 const ABOUT_COMMAND = "about"
@@ -103,6 +104,8 @@ client.on('messageCreate', msg =>{
                 { name: '(c!)italyrick', value: 'Invita un amico molto speciale sul canale' },
                 { name: '(c!)donate', value: 'PAY US IN CRYPTO!'},
                 { name: '(c!)releasenotes', value: 'Check out what\'s new!'},
+                { name: '(c!)pickup', value: "😏"},
+                { name: 'PEOPLE COMMANDS'},
                 { name: '(c!)jason', value: "sussin"},
                 { name: '(c!)roastrico', value: "amogus"},
                 { name: '(c!)sahnan', value: 'sussy'},
@@ -131,7 +134,7 @@ client.on('messageCreate', msg =>{
         const releasenotesEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setTitle('Release Notes')
-            .addField('v0.35', 'Un-embedded rick commands')
+            .addField('v0.39', 'Added pickup lines 😏')
             .setFooter({ text: '"everything\'s better with release notes"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80'})
         
         msg.channel.send({embeds: [releasenotesEmbed] });
