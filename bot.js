@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const pickups = ['You\'re so hot, even my zipper is falling for you', 'Are you a bullet? Because I can\'t seem to get you out of my head', 'Are you a roller coaster? Because the faster you go, the louder I scream', 'Are you a task? Because I have no problem doing you', 'I hope you know CPR, because you just took my breath away']
 const { Client, Intents, MessageEmbed } = require('discord.js');
 const { MessageButtonStyles } = require('discord.js');
 const { maxHeaderSize } = require('http');
@@ -19,6 +20,7 @@ const JASON_COMMAND = "jason"
 const RICO_COMMAND = "rico"
 const SAHNAN_COMMAND = "sahnan"
 const SRI_COMMAND = "sri"
+const PICKUP_COMMAND = "pickup"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
@@ -166,6 +168,10 @@ client.on('messageCreate', msg =>{
             .setDescription('sus')
             .setImage('https://cdn.discordapp.com/attachments/928377202251280395/950423605454463026/EkkfyuwvP2QnOHnwmSaVkAuFPhYqDgYIgCQRI7svZoiIgERvboRAhECEwLsTgYiARAQkIiDvzr4dPVWEwGwIvN0JyP8AMRZdLTS6jC0AAAAASUVORK5CYII.png')
         msg.channel.send({embeds: [sriEmbed]})
+    }
+
+    if (msg.content == `${BOT_PREFIX}${PICKUP_COMMAND}`) {
+        msg.channel.send(pickups[Math.floor(Math.random() * pickups.length)])
     }
 
 })
