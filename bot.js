@@ -49,7 +49,7 @@ client.on('messageCreate', msg =>{
 	        .setTitle('About')
 	        .setAuthor({ name: 'Fizekz', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' })
 	        .setThumbnail('https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80')
-	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.35 . \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
+	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.42. \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
 
         msg.channel.send({ embeds: [aboutEmbed] });
     }
@@ -105,7 +105,7 @@ client.on('messageCreate', msg =>{
                 { name: '(c!)donate', value: 'PAY US IN CRYPTO!'},
                 { name: '(c!)releasenotes', value: 'Check out what\'s new!'},
                 { name: '(c!)pickup', value: "😏"},
-                { name: 'PEOPLE COMMANDS', value: ''},
+                { name: 'PEOPLE COMMANDS', value: '/-------------\\'},
                 { name: '(c!)jason', value: "sussin"},
                 { name: '(c!)roastrico', value: "amogus"},
                 { name: '(c!)sahnan', value: 'sussy'},
@@ -134,7 +134,7 @@ client.on('messageCreate', msg =>{
         const releasenotesEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setTitle('Release Notes')
-            .addField('v0.39', 'Added pickup lines 😏')
+            .addField('v0.42', 'Smoothed out some minor difficulties with the help command')
             .setFooter({ text: '"everything\'s better with release notes"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80'})
         
         msg.channel.send({embeds: [releasenotesEmbed] });
