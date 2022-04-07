@@ -17,11 +17,12 @@ const EMBED_TEST_COMMAND = "embedtest"
 const HELP_COMMAND = "help"
 const DONATE_COMMAND = "donate"
 const RELEASENOTES_COMMAND = "releasenotes"
-const JASON_COMMAND = "jason"
-const RICO_COMMAND = "rico"
-const SAHNAN_COMMAND = "sahnan"
-const SRI_COMMAND = "sri"
+const JASON = "jason"
+const RICO = "rico"
+const SAHNAN = "sahnan"
+const SRI = "sri"
 const PICKUP_COMMAND = "pickup"
+const DIZA = "diza"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
@@ -49,7 +50,7 @@ client.on('messageCreate', msg =>{
 	        .setTitle('About')
 	        .setAuthor({ name: 'Fizekz', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' })
 	        .setThumbnail('https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80')
-	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.42. \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
+	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.43. \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
 
         msg.channel.send({ embeds: [aboutEmbed] });
     }
@@ -110,6 +111,7 @@ client.on('messageCreate', msg =>{
                 { name: '(c!)roastrico', value: "amogus"},
                 { name: '(c!)sahnan', value: 'sussy'},
                 { name: '(c!)sri', value: "bussin" },
+                { name: '(c!)diza', value: "what even is this at this point"},
     )
             .setFooter({ text: '"pls donate"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' });
 
@@ -134,13 +136,13 @@ client.on('messageCreate', msg =>{
         const releasenotesEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setTitle('Release Notes')
-            .addField('v0.42', 'Smoothed out some minor difficulties with the help command')
+            .addField('v0.43', 'added diza command upon request (dm <@!626749993465937946> for requests)')
             .setFooter({ text: '"everything\'s better with release notes"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80'})
         
         msg.channel.send({embeds: [releasenotesEmbed] });
     }
 
-    if (msg.content == `${BOT_PREFIX}${JASON_COMMAND}`) {
+    if (msg.content == `${BOT_PREFIX}${JASON}`) {
         const jasonEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setDescription('sussin')
@@ -149,7 +151,7 @@ client.on('messageCreate', msg =>{
         msg.channel.send({embeds: [jasonEmbed]})
     }
 
-    if (msg.content == `${BOT_PREFIX}${RICO_COMMAND}`) {
+    if (msg.content == `${BOT_PREFIX}${RICO}`) {
         const ricoEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setDescription('bussin')
@@ -157,7 +159,7 @@ client.on('messageCreate', msg =>{
         msg.channel.send({embeds: [ricoEmbed]})
     }
 
-    if (msg.content == `${BOT_PREFIX}${SAHNAN_COMMAND}`) {
+    if (msg.content == `${BOT_PREFIX}${SAHNAN}`) {
         const sahnanEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setDescription('sussy')
@@ -165,7 +167,7 @@ client.on('messageCreate', msg =>{
         msg.channel.send({embeds: [sahnanEmbed]})
     }
 
-    if (msg.content == `${BOT_PREFIX}${SRI_COMMAND}`) {
+    if (msg.content == `${BOT_PREFIX}${SRI}`) {
         const sriEmbed = new MessageEmbed()
             .setColor('#27f459')
             .setDescription('sus')
@@ -175,6 +177,14 @@ client.on('messageCreate', msg =>{
 
     if (msg.content == `${BOT_PREFIX}${PICKUP_COMMAND}`) {
         msg.channel.send(pickups[Math.floor(Math.random() * pickups.length)])
+    }
+
+    if (msg.content == `${BOT_PREFIX}${DIZA}`) {
+        const dizaEmbed = new MessageEmbed()
+            .setColor('#27f459')
+            .setDescription('amogus')
+            .setImage('https://cdn.discordapp.com/attachments/928454719377117256/961402193347481630/3DF8B497-70EE-461C-85E5-864955B92733.JPG')
+        msg.channel.send({embeds: [dizaEmbed]})
     }
 
 })
