@@ -5,7 +5,7 @@ const { MessageButtonStyles } = require('discord.js');
 const { maxHeaderSize } = require('http');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
-const pickups = ['You\'re so hot, even my zipper is falling for you', 'Are you a bullet? Because I can\'t seem to get you out of my head', 'Are you a roller coaster? Because the faster you go, the louder I scream', 'Are you a task? Because I have no problem doing you', 'I hope you know CPR, because you just took my breath away', 'Are you a parking ticket? Because you\'ve got fine written all over you', 'Your outfit would look great on my bedroom floor', 'Are you a loan? Because you are gaining my interest', 'Is that a candy cane in your pocket? Or are you just happy to see me?', 'You look great right now. You know what else would look good on you? Me', 'You dropped something...My jaw', 'Do you have a name? Or should I call you mine?']
+const pickups = ['Are you a bullet? Because I can\'t seem to get you out of my head', 'I hope you know CPR, because you just took my breath away', 'Are you a parking ticket? Because you\'ve got fine written all over you', 'Are you a loan? Because you are gaining my interest', 'You dropped something...My jaw', 'Do you have a name? Or should I call you mine?']
 const BOT_PREFIX = "c!"
 const TEST_COMMAND = "test"
 const ABOUT_COMMAND = "about"
@@ -50,7 +50,7 @@ client.on('messageCreate', msg =>{
 	        .setTitle('About')
 	        .setAuthor({ name: 'Fizekz', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80' })
 	        .setThumbnail('https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80')
-	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.43. \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
+	        .setDescription('3rd Floor Cucumber is a bot created by <@!626749993465937946>. \nThis bot is in early release v0.44. \nDM <@!626749993465937946> for questions. \nDonations greatly appreciated.')
 
         msg.channel.send({ embeds: [aboutEmbed] });
     }
@@ -136,7 +136,7 @@ client.on('messageCreate', msg =>{
         const releasenotesEmbed = new MessageEmbed()
             .setColor('#27f549')
             .setTitle('Release Notes')
-            .addField('v0.43', 'added diza command upon request (dm <@!626749993465937946> for requests)')
+            .addField('v0.44', 'MADE PICKUP LINES MORE FAMILY FRIENDLY?? THEY\'RE PICKUP LINES! WHAT DO YOU EXPECT? ALSO YOU CANT FORCE ME TO DO SOMETHING JUST BECAUSE YOU HAVE MY MOM\'S NUMBER! THATS BLACKMAIL!')
             .setFooter({ text: '"everything\'s better with release notes"', iconURL: 'https://cdn.discordapp.com/avatars/626749993465937946/ccd004b11ab4581b4f995c4ba9067495.webp?size=80'})
         
         msg.channel.send({embeds: [releasenotesEmbed] });
@@ -183,7 +183,7 @@ client.on('messageCreate', msg =>{
         const dizaEmbed = new MessageEmbed()
             .setColor('#27f459')
             .setDescription('amogus')
-            .setImage('https://cdn.discordapp.com/attachments/928454719377117256/961402193347481630/3DF8B497-70EE-461C-85E5-864955B92733.JPG')
+            .setImage('https://cdn.discordapp.com/attachments/928454719377117256/961584797585670194/deepfried_1649330057454.jpg')
         msg.channel.send({embeds: [dizaEmbed]})
     }
 
