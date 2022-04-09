@@ -197,7 +197,7 @@ client.on('messageCreate', msg =>{
                     .setLabel('Test')
                     .setStyle('PRIMARY'),
             )
-        await interaction.reply({ content: 'Testing...', components: [row] })
+        msg.channel.send({ content: 'Testing...', components: [row] })
     }
 
 })
