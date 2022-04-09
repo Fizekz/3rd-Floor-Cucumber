@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const { MessageActionRow, MessageButton, Message } = require('discord.js');
 const { Client, Intents, MessageEmbed } = require('discord.js');
 const { MessageButtonStyles } = require('discord.js');
 const { maxHeaderSize } = require('http');
@@ -23,6 +24,7 @@ const SAHNAN = "sahnan"
 const SRI = "sri"
 const PICKUP_COMMAND = "pickup"
 const DIZA = "diza"
+const BUTTON_TEST_COMMAND = "buttontest"
 
 client.on('ready', () => {
     console.log('3rd Floor Cucumber has initialized, starting main bootup')
@@ -185,6 +187,17 @@ client.on('messageCreate', msg =>{
             .setDescription('amogus')
             .setImage('https://cdn.discordapp.com/attachments/928454719377117256/961584797585670194/deepfried_1649330057454.jpg')
         msg.channel.send({embeds: [dizaEmbed]})
+    }
+
+    if (msg.content == `${BOT_PREFIX}${BUTTON_TEST_COMMAND}`) {
+        const row = new MessageActionRow()
+            .addComponents(
+                new MessageButton()
+                    .setCustomId('test')
+                    .setLabel('Test')
+                    .setStyle('PRIMARY'),
+            )
+        await interaction.reply({ content: 'Testing...', components: [row] })
     }
 
 })
